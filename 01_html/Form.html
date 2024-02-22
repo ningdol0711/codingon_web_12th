@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form & Input tag</title>
+  </head>
+  <body>
+    <h1>폼 관련 태그를 알아보자요~</h1>
+
+    <!-- form : 사용자로부터 입력받는 요소를 감싸는 태그, form 태그 자체는 화면에
+      드러나지 않는다.-->
+    <form>
+      <!-- input tag -->
+      <!-- name 속성을 가질 수 있다. -->
+      Text 1 : <input type="text" /> 
+      <!-- disabled 속성 : 편집이 불가능 하게 만드는 속성 -->
+      Text 2 : <input type="text" disabled/> 
+      <br/>
+
+      <!-- label : 폼 요소에 이름을 붙이기 위한 
+        for 속성 : 연결하려는 폼 요소의 id 속성값과 일치 -->  
+      <label for="user-email">이메일 : </label>
+      <!-- placeholder 속성 : 미리보기 안내문구 -->
+      <input type="email" id="user-email" placeholder="abc@test.com">
+      
+      <input type="color">
+      <input type="range">
+      <input type="file">
+      <input type="date">
+      <br/>
+
+      <!-- textarea : 여러줄을 입력받는 입력창 -->
+      <!-- cols, rows 속성 : 열과 행을 나타낸다. -->
+      <label for="introduce">자기소개</label>
+      <textarea id="introduce" cols="30" rows="10"></textarea>
+      <br/>
+
+      <!-- checkbox와 radio는 name 속성을 이용해 카테고리화 해야한다. -->
+      <!-- checkbox : 여러개의 선택이 가능하다. -->
+      <!-- checked 속성 : 미리 선택되어 있도록 -->
+      <h5>취미 무엇?</h5>
+      <input type="checkbox" name="interest" value="basketball" checked> 농구
+      <input type="checkbox" name="interest" value="movie"> 영화보기
+      <input type="checkbox" name="interest" value="lay-down"> 누워있기
+
+      <!-- radio : 한개의 선택만 가능하다. -->
+      <h5>당신의 성별</h5>
+      <input type="radio" name="gender" value="m" id="gender-m">
+      <label for="gender-m">남자</label>
+      <input type="radio" name="gender" value="f" id="gender-f">
+      <label for="gender-f">여자</label>
+      <br/>
+
+      <!-- select : 옵션을 선택할 수 있는 태그 -->
+      <label for="flower">좋아하는 꽃</label>
+      <select name="flower" id="flower">
+        <option value="a">장미</option>
+        <option value="b">동백꽃</option>
+        <option value="c" disabled>백합</option>
+      </select>
+      <label for="exercise">좋아하는 운동</label>
+      <select name="exercise" id="exercise">
+        <optgroup label="실내 운동">
+          <option value="a">배드민턴</option>
+          <option value="b">농구</option>
+        </optgroup>
+        <optgroup label="실외 운동">
+          <option value="c">축구</option>
+          <option value="d">야구</option>
+        </optgroup>
+      </select>
+      <br/>
+
+      <!-- button tag, button type -->
+      <!-- 단순버튼 : 클릭이 가능한 버튼 -->
+      <input type="button" value="타입 버튼1">
+      <button type="button">태그 버튼1</button>
+      <!-- 위 두 버튼은 서로 같은 버튼 -->
+      <br/>
+      <!-- 제출 버튼 : 품을 제출하는 버튼 -->
+      <input type="submit" value="제출 버튼(타입)">
+      <button type="submit">제출 버튼(태그)</button>
+      <!-- 위 두 버튼은 서로 같은 버튼 -->
+    </form>
+  </body>
+</html>
