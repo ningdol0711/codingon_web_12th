@@ -1,0 +1,38 @@
+*{
+  /* box-sizing : 요소의 크기를 계산하는 방식 */
+  /* border-box : 요소의 크기를 content + border + padding까지 */
+  /* 포함시켜서 계산하겠다. */
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Nanum Pen Script", cursive;
+  font-style: italic;
+}
+
+div{
+  background-color: antiquewhite;
+  font-size: 30px;
+  font-weight: 400;
+  /* font family의 경우 사용자마다 사용하는 폰트가 다르므로 일반적으로
+    3가지를 지정하여 사용한다. */
+    font-family: "Black Han Sans", sans-serif;
+
+  text-align: center;
+  text-decoration: underline;
+  line-height: 2;
+
+  width: 600px;
+  height: 400px;
+
+  padding: 20px;
+  margin: 50px;
+
+  border: 4px solid lime;
+
+  border-radius: 90px;
+
+  /* visibility : hidden, visible */
+  visibility: visible;
+  /* visibility: hidden; */
+}

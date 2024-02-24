@@ -31,3 +31,52 @@ input:focus{
 .links > a:visited{
   color: #CCC;
 }
+
+.zoo > *{
+  background-color: green;
+  color: #FFF;
+}
+
+/* E:last-child : E가 마지막 요소라면 선택 */
+.zoo > li:last-child{
+  background-color: black;
+}
+
+/* E:first-child : E가 첫번째 요소라면 선택 */
+.zoo > *:first-child{
+  background-color: red;
+}
+
+/* E:not(ABC) : ABC가 아닌 요소 */
+.zoo > *:not(div){
+  background-color: pink;
+}
+
+/* E:nth-child(n) : E가 n번쨰 요소라면 선택 */
+.zoo > *:nth-child(2){
+  background-color: magenta;
+}
+
+/* E::after or before가상 요소 선택자 */
+.box::before{
+  content: '택시~ ';
+  color: red;
+}
+
+.box::after{
+  content: ' 빨리!!';
+  color: magenta;
+}
+
+/* 속성 선택자 */
+[disabled] {
+  background-color: darkgray;
+}
+
+[placeholder="이름"]{
+  background-color: orange;
+}
+
+input:not([placeholder]){
+  background-color: skyblue;
+}
