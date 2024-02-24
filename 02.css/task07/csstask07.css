@@ -1,0 +1,72 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: skyblue;
+}
+
+.head{
+  border: 4px solid white;
+  border-radius: 4px;
+  width: fit-content;
+  background-color: rgb(92, 224, 224);
+  color: aliceblue;
+}
+
+#name{
+  border: 4px solid white;
+  border-radius: 4px;
+  width: fit-content;
+  padding: 2px;
+  background-color: rgb(255, 97, 97);
+  color: white;
+}
+#name:hover{
+  border-style: dashed;
+  border-color: black;
+}
+
+#email{
+  border: 4px solid white;
+  border-radius: 4px;
+  width: fit-content;
+  padding: 2px;
+  background-color: rgb(248, 108, 32);
+  color: white;
+}
+#email:hover{
+  border-style: dashed;
+  border-color: black;
+}
+
+#age{
+  border: 4px solid white;
+  border-radius: 4px;
+  width: fit-content;
+  padding: 3px;
+  background-color: rgb(237, 237, 63);
+}
+#age:active{
+  border-style: dashed;
+  border-color: black;
+}
+
+.class{
+  border: 4px solid white;
+  border-radius: 4px;
+  width: fit-content;
+  padding: 3px;
+  background-color: lightgreen;
+}
+
+#freetalk{
+  border: 4px dashed rgb(200, 78, 244);
+  color: magenta;
+  background-color: steelblue;
+  font-size: 20px;
+}
+
+#sumbit:hover{
+  visibility: hidden;
+}
