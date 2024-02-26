@@ -1,0 +1,43 @@
+div{
+  width: 100px;
+  height: 100px;
+  font-size: 700;
+  text-align: center;
+  line-height: 100px;
+}
+
+/* static : default */
+/* inline요소 : 왼 -> 오 쌓임 */
+/* block요소 : 위 -> 아래 쌓임 */
+.p-static{
+  position: static;
+  background-color: pink;
+}
+
+/* relative : 상대 위치 */
+/* top, bottom, left, right 중 하나 이상의 요소를 함께 사용 */
+/* 원래 있어야 하는 위치를 기준으로 이동 */
+.p-relative{
+  position: relative;
+  left: 100px;
+  background-color: skyblue;
+}
+
+/* absolute : 절대 위치 */
+/* position 요소를 가지는 가장 가까운 조상 요소를 기준 */
+/* 만약 조상 중 position 요소가 없다면 body 기준 */
+.p-absolute{
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  background-color: bisque;
+}
+
+/* fixed : 고정 위치 */
+/* viewport 기준, 브라우저 화면이 스크롤 되어도 움직이지 않는다. */
+.p-fixed{
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  background-color: burlywood;
+}
