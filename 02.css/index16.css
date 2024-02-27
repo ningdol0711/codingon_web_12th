@@ -14,7 +14,8 @@
   height: 100px;
   background-color: cyan;
   position: relative;
-  
+
+  /* animation: zigzag; */
   animation-duration: 2s;
   animation-delay: 1s;
   animation-timing-function: ease;
@@ -29,6 +30,55 @@
     left: 400px;
   }
   100%{
-    left: 800px;
+    left: 0px;
+  }
+}
+
+.ball1{
+  position: relative;
+  left: 100px;
+
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  border-radius: 50%;
+
+  /* animation-name: bounce1;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; */
+
+  /* animation: bounce1 1s ease-out infinite alternate; */
+}
+
+@keyframes bounce1{
+  to{
+    top: 50px;
+  }
+  from{
+    top: 300px;
+  }
+}
+
+.ball2{
+  width: 50px;
+  height: 50px;
+  background-color: skyblue;
+  border-radius: 50%;
+
+  position: absolute;
+
+  animation: bounce2 infinite 2s;
+}
+
+@keyframes bounce2{
+  from, to{
+    bottom: 0;
+    animation-timing-function: ease-out;
+  }
+  50%{
+    bottom: 300px;
+    animation-timing-function: ease-in;
   }
 }

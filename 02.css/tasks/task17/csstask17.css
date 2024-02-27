@@ -1,0 +1,17 @@
+p{
+  position: relative;
+  animation-name: text;
+  animation-duration: 3s;
+  overflow-y: auto;
+}
+
+@keyframes text{
+  from{
+    left: 500px;
+    width: 400%;
+  }
+  to{
+    left: 0;
+    width: 100%;
+  }
+}
