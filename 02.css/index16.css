@@ -1,0 +1,34 @@
+/* animation */
+/* animation-name : @keyframes 애니메이션 이름 지정 */
+/* 시작 : from or 0% */
+/* 끝 : to or 100% */
+
+/* animation-duration : 한 사이클의 애니매이션 길이 조정 */
+/* animation-delay : 한 사이클이 끝난 후 딜레이 결정 */
+/* animation-interation-count : 반복 횟수 결정 */
+/* animation-timing-function : 진행 시간 간격 조정 */
+/* animation-direction : 한 사이클 종료 후 반복될때 진행 방향 결정 */
+
+.box{
+  width: 100px;
+  height: 100px;
+  background-color: cyan;
+  position: relative;
+  
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: 3;
+}
+
+@keyframes zigzag{
+  0%{
+    left: 0;
+  }
+  50%{
+    left: 400px;
+  }
+  100%{
+    left: 800px;
+  }
+}
