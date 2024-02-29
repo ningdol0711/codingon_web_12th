@@ -45,8 +45,8 @@ console.log("----------------------");
 console.log(false||true);
 console.log(false||"LEE");
 
-// let usercolor = "red";
-let usercolor = undefined;
+let usercolor = "red";
+// let usercolor = undefined;
 let defaultcolor = "blue";
-let currentcolor = usercolor||defaultcolor;
+let currentcolor = defaultcolor||usercolor;
 console.log("현재 색상 : ", currentcolor);

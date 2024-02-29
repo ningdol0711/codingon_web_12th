@@ -28,7 +28,7 @@ const a2 = '1';
 console.log(a1==a2);
 
 const b1 = Symbol('1');
-const b2 = Symbol('1');
+const b2 = Symbol('2');
 console.log(b1==b2);
 
 // bigInt
