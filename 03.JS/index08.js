@@ -50,3 +50,8 @@ let usercolor = undefined;
 let defaultcolor = "blue";
 let currentcolor = usercolor||defaultcolor;
 console.log("현재 색상 : ", currentcolor);
+
+// 삼항 연산자
+let points = 110;
+let type = points > 100 ? "true" : "false" // 참이면 세미콜론 왼쪽에 있는 값을 저장한다.
+console.log(type);
