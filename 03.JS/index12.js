@@ -19,26 +19,35 @@
 // let b = sayHo();
 
 // 함수의 길이
-function long() {
-  console.log(long.length);
-}
-long(); // length : 0
-long(1, 2); //length 0
+// function long() {
+//   console.log(long.length);
+// }
+// long(); // length : 0
+// long(1, 2); //length 0
 
-function fn1(x) {
-  console.log(x);
-}
-function fn2(x, y) {
-  console.log(x, y);
-}
-console.log(fn1.length);
-console.log(fn2.length);
+// function fn1(x) {
+//   console.log(x);
+// }
+// function fn2(x, y) {
+//   console.log(x, y);
+// }
+// console.log(fn1.length);
+// console.log(fn2.length);
 
-// return
-function add(x, y) {
-  console.log(`주어진 값 : ${x}, ${y}`);
-  return x+y;
-}
-let result = add(1, 2);
-console.log(result);
-console.log(add(3,4));
+// // return
+// function add(x, y) {
+//   console.log(`주어진 값 : ${x}, ${y}`);
+//   return x+y;
+// }
+// let result = add(1, 2);
+// console.log(result);
+// console.log(add(3,4));
+
+// es5
+// let pow = function(x) {
+//   return x * x;
+// }
+// console.log(pow);
+
+// es6
+// let pow = x => x * x;
