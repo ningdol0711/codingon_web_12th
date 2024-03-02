@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index24</title>
+</head>
+<body>
+  <button onclick="alert('click!')">click</button>
+  <br>
+  <button onclick="myF()">myF</button>
+  <br>
+  <button id="btn">sumbit</button>
+  <script>
+    function myF() {
+      console.log("myF");
+    }
+    document.querySelector("#btn").addEventListener("click",
+    function() {
+      console.log("clicked");
+    })
+  </script>
+
+  <script>
+    window.addEventListener("load", 
+    function() {
+      console.log("web browser loaded");
+    })
+  </script>
+</body>
+</html>
