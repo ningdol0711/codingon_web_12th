@@ -29,3 +29,14 @@ function Person(name, age) {
 }
 let person3 = new Person("willy", 28);
 console.log(person3);
+
+// 배열 안 객체
+let student = [
+  {name : "철수", score : 90},
+  {name : "영희", score : 80},
+  {name : "민수", score : 70},
+  {name : "형준", score : 60},
+]
+for(let i=0;i<student.length;i++) {
+  console.log(student[i]["score"]);
+}
