@@ -33,5 +33,45 @@
         </tr>
     </table>
 </div>
+
+<script>
+  let cnt = 1;
+  function writeNote() {
+    let nameVal = document.getElementById("name").value;
+    let contentVal = document.getElementById("content").value;
+    let table = document.getElementById("table");
+
+    let garo = document.createElement("tr");
+    let td1 = document.createElement("td"); // 번호
+    let td2 = document.createElement("td"); // 작성자
+    let td3 = document.createElement("td"); // 내용
+    let td4 = document.createElement("td"); // 작성일
+
+    td1.innerText = cnt++;
+    td2.innerText = nameVal;
+    td3.innerText = contentVal;
+    let date = new Date();
+    td4.innerText = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
+
+    // tr에 td 자식으로 넣기
+    garo.appendChild(td1);
+    garo.appendChild(td2);
+    garo.appendChild(td3);
+    garo.appendChild(td4);
+
+    // tr table에 자식으로 넣기
+    table.appendChild(garo);
+
+    // 입력값 초기화
+    // nameVal = document.getElementById("name").value="";
+    // contentVal = document.getElementById("content").value="";
+
+    let inputs = document.querySelectorAll("input");
+
+    for(let i=0;i<inputs.length;i++) {
+      inputs[i].value = "";
+    }
+  }
+</script>
 </body>
 </html>
