@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index31</title>
+</head>
+<body>
+  <button id="myBtn" onclick="myF()">click</button>
+  <p id="demo"></p>
+
+  <script>
+    const mybutton = document.getElementById("myBtn");
+    let answer = mybutton.hasAttribute("onclick");
+    console.log(answer);
+    document.getElementById("demo").innerText = answer;
+  </script>
+  <a href="http://www.naver.com" id="naver">naver</a>
+  <script>
+    document.getElementById("naver").getAttribute("herf");
+  </script>
+</body>
+</html>

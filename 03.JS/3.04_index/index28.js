@@ -9,3 +9,4 @@ let decrease = setInterval(function() {
   subnum--;
   console.log("subnum-- ",subnum);
 }, 1000)
+
