@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index42</title>
+  <script type="text/javascript" src="./index42.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    body {width: 60%; margin: 0 auto; border: 1px solid;}
+    div { text-align: center;}
+    table { margin: 0 auto}
+      td {
+        width: 100px;
+        height: 100px;
+        color: black;
+      }
+      tr > td:first-child,
+      tr > th:first-child {
+        color: red;
+      }
+      tr > td:last-child,
+      tr > th:last-child {
+        color: blue;
+      }
+      td > p:hover {
+        cursor: pointer;
+      }
+  </style>
+</head>
+<body>
+  <div id="userInput">
+    날짜 : <input type="text" id="date" readonly /> <br />
+    내용 : <input type="text" id="content" /> <br />
+    <button type="button" onclick="write();">작성</button> <br />
+  </div>
+  <div style="font-size: 2em; color: green; text-align: center">
+    2022년 7월
+  </div>
+  <br />
+  <table  width="500" style="text-align: center">
+    <tr>
+      <th>日</th>
+      <th>月</th>
+      <th>火</th>
+      <th>水</th>
+      <th>木</th>
+      <th>金</th>
+      <th>土</th>
+    </tr>
+    <tr>
+      <td><p></p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+      <td><p>1</p></td>
+      <td><p>2</p></td>
+    </tr>
+    <tr>
+      <td><p>3</p></td>
+      <td><p>4</p></td>
+      <td><p>5</p></td>
+      <td><p>6</p></td>
+      <td><p>7</p></td>
+      <td><p>8</p></td>
+      <td><p>9</p></td>
+    </tr>
+    <tr>
+      <td><p>10</p></td>
+      <td><p>11</p></td>
+      <td><p>12</p></td>
+      <td><p>13</p></td>
+      <td><p>14</p></td>
+      <td><p>15</p></td>
+      <td><p>16</p></td>
+    </tr>
+    <tr>
+      <td><p>17</p></td>
+      <td><p>18</p></td>
+      <td><p>19</p></td>
+      <td><p>20</p></td>
+      <td><p>21</p></td>
+      <td><p>22</p></td>
+      <td><p>23</p></td>
+    </tr>
+    <tr>
+      <td><p>24</p></td>
+      <td><p>25</p></td>
+      <td><p>26</p></td>
+      <td><p>27</p></td>
+      <td><p>28</p></td>
+      <td><p>29</p></td>
+      <td><p>30</p></td>
+    </tr>
+    <tr>
+      <td><p>31</p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+      <td><p></p></td>
+    </tr>
+  </table>
+  <script>
+    let target;
+
+$("td>p").on("click", function() {
+  console.log($(this).text());
+  $("#date").val($(this).text());
+  target = this;
+})
+
+function write() {
+  let content = $("#content").val();
+  $(target).parent().append(`<span>${content}</span>`);
+  $("#content").val = "";
+  $("#date").val = "";
+}
+  </script>
+</body>
+</html>
