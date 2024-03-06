@@ -1,0 +1,28 @@
+.box {
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px
+}
+
+@media screen and (min-width: 701px) {
+  #container {
+    display: flex;
+    flex-direction: row;
+  }
+  .box {
+    background-color: black;
+    border: 1px solid skyblue;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #container {
+    display: grid;
+    grid-template-rows: auto;
+  }
+  .box {
+    background-color: skyblue;
+    border: 1px solid black;
+  }
+}
