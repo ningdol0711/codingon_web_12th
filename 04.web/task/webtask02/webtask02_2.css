@@ -45,8 +45,13 @@
     justify-content: space-evenly;
   }
 
+  .imgcontainer {
+    display: flex;
+    align-items: center;
+  }
+
   .img {
-    height: 4em;
+    height: 3em;
     width: auto;
   }
 
