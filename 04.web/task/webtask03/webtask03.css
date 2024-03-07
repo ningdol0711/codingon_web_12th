@@ -1,0 +1,29 @@
+.box {
+  height: 150px;
+  margin: 20px;
+  color: black;
+}
+
+.box1 {
+  background-color: yellow;
+}
+
+.box2 {
+  background-color: blue;
+  color: white;
+}
+
+.box3 {
+  background-color: purple;
+  color: white;
+}
+
+.box4 {
+  background-color: green;
+  color: white;
+}
+
+.box5 {
+  background-color: blue;
+  color: white;
+}
