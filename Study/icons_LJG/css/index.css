@@ -1,0 +1,245 @@
+@import url(./normalize.css);
+
+:root {
+  --color-secondary: #00D9FF;
+  --color-primary: #2584FF;
+  --color-headings: #1B0760;
+  --color-border: #ccc;
+  --color-body: #918CA4;
+  --color-body-darker: #5C5577;
+  --color-accent: #FF3400;
+  --border-radius: 30px;
+}
+
+*, *::bofore, *::after {
+  box-sizing: border-box;
+}
+
+/* typography */
+::selection {
+  background: var(--color-primary);
+  color: ivory;
+}
+html {
+  font-size: 62.5%; /* == 10px */
+}
+img {
+  width: 100%;
+}
+body {
+  font-family: "Madimi One", sans-serif;
+  font-size: 2rem;
+  line-height: 1.5;
+  color: var(--color-body);
+}
+h1 {
+  font-size: 6rem;
+}
+h2 {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.3;
+}
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 3rem;
+  }
+  h1 {
+    font-size: 8rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+  h3 {
+    font-size: 2.4rem;
+  }
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+.link-arrow {
+  color: var(--color-accent);
+  font-size: 2rem;
+  font-weight: bold;
+}
+.link-arrow::after {
+  content: "-->";
+  margin-left: 5px;
+  transition: margin 0.2s;
+}
+.link-arrow:hover::after {
+  margin-left: 10px;
+}
+@media screen and (min-width:1024px) {
+  .link-arrow {
+    font-size: 1.5rem;
+  }
+}
+
+/* badges */
+.badge {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  border-radius: 18px;
+  white-space: nowrap;
+}
+.badge--primary {
+  background: var(--color-primary);
+  color: ivory;
+}
+.badge--secondary {
+  background: var(--color-secondary);
+  color: ivory;
+}
+.badge--small {
+  font-size: 1.6rem;
+  padding: 0.5rem 1.5rem;
+}
+@media screen and (min-width:1024px) {
+  .badge {
+    font-size: 1.5rem;
+  }
+  .badge--small {
+    font-size: 1rem;
+  }
+}
+
+/* lists */
+.list {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.list--inline .list--item {
+  display: inline-block;
+  margin-right: 2rem;
+}
+.list--tick {
+  list-style-image: url(../images/tick.svg);
+  padding-left: 3rem;
+  color: var(--color-headings);
+}
+.list--tick .list--item {
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width:1024px) {
+  .list--tick .list--item {
+    padding-left: 0;
+  }
+}
+
+/* icon */
+.icon {
+  width: 50px;
+  height: 50px;
+}
+.icon--small {
+  width: 40px;
+  height: 40px;
+}
+.icon--primary {
+  fill:var(--color-primary);
+}
+.icon--white {
+  fill:var(white);
+}
+.icon--container {
+  background: ivory;
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+.icon--container--accent {
+  background: var(--color-accent);
+}
+
+/* buttons */
+.btn {
+  border-radius: 40px;
+  border: 0px;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  outline: 0;
+  padding: 2rem 4vw;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.btn--primary {
+  background: var(--color-primary);
+  color: white;
+}
+.btn--primary:hover {
+  background: blue;
+}
+.btn--secondary {
+  background: var(--color-secondary);
+  color: white;
+}
+.btn--secondary:hover {
+  background: rgb(83, 206, 255);
+}
+.btn--accent {
+  background: var(--color-accent);
+  color: white;
+}
+.btn--accent:hover {
+  background: rgb(255, 135, 135);
+}
+.btn--outline {
+  background: #fff;
+  color: var(--color-headings);
+  border: 2px solid var(--color-headings);
+}
+.btn--outline:hover {
+  background: var(--color-headings);
+  color: #fff;
+}
+.btn--stretched {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+.btn--block {
+  width: 100%;
+  display: inline-block;
+}
+@media screen and (min-width: 1024px) {
+  .btn {
+    font-size: 1.5rem;
+  }
+}
+
+/* cards */
+.card {
+  border-radius: 7px;
+  box-shadow: 0 0 20px 10px ivory;
+  overflow: hidden;
+}
+.card--header, .card--body {
+  padding: 2rem 7%;
+}
+.card--primary, .card--header {
+  background: var(--color-primary);
+  color: white;
+}
+.card--secondary, .card--header {
+  background: var(--color-secondary);
+  color: white;
+}
+.card--primary .badge--secondary {
+  background: rgb(0, 145, 255);
+}
+.card--secondary .badge--secondary {
+  background: rgb(0, 94, 255);
+}
