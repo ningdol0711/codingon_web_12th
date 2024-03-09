@@ -1,0 +1,39 @@
+p{
+  text-align: center;
+  font-weight: bold;
+}
+
+li{
+  display: inline;
+}
+
+.box1{
+  display: flex;
+  flex-direction: row;
+  background-color: lightgray;
+  justify-content: space-between;
+}
+
+.LOGO{
+  display: inline;  
+  line-height: 50px;
+  padding: 0 15px;
+}
+
+.MENU1{
+  display: inline;
+  list-style-type: none;
+  padding: 0 15px;
+}
+
+.box2{  
+  display: flex;
+  flex-direction: row;
+  background-color: lightgray;
+  justify-content: space-between;
+}
+
+.MENU2{
+  display: inline;
+  padding: 0;
+}

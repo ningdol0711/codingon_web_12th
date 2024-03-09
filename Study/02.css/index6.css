@@ -1,0 +1,12 @@
+.box{
+  background-color: magenta;
+  color: white;
+  width: 300px;
+  height: 100px;
+
+  /* overflow : visible, hidden, scroll, auto */
+  /* overflow: auto; */
+  overflow-y: auto; /* 방향 지정 가능 */
+
+  opacity: 0.5;
+}

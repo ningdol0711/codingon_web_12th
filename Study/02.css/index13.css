@@ -1,0 +1,81 @@
+.container{
+  width: 400px;
+  height: 400px;
+  background-color: skyblue;
+  margin: auto;
+
+  display: flex;
+
+  /* flex 기본 용어 */
+  /* main axis : 아이템 배치의 방향 축 */
+  /* cross axis : main axis의 수직 축 */
+
+  /* flex-direction: row; */
+  /* flex-direction: row-reverse; */
+  /* flex-direction: column; */
+  /* flex-direction: column-reverse; */
+
+  /* justify-content : 주축에 대하여 컨텐츠를 어떻게 배치할 것인가. */
+  /* justify-content: flex-start; */
+  /* justify-content: flex-end; */
+  /* justify-content: space-between; */
+  /* justify-content: space-around; */
+  /* justify-content: space-evenly; */
+
+  /* align-items : 교차축에 대해 어떻게 아이템을 정렬할 것인가 */
+  /* align-items: stretch; */
+  /* align-items: flex-start; */
+  /* align-items: flex-end; */
+  /* align-items: center; */
+  /* align-items: baseline; */ 
+  /* baseline : 텍스트 라인에 맞추어 정렬한다. */
+
+  /* flex-wrap :  flex-items 줄 바꾸기 */
+  /* flex-wrap: nowrap; */
+  /* flex-wrap: wrap; */
+  /* flex-wrap: wrap-reverse; */
+
+  /* align-content : 주 축에 대한 아이템이 2줄 이상 일 때,
+  여러 행에 대한 정렬 */
+  /* align-content: stretch; */
+  /* align-content: flex-start; */
+  /* align-content: flex-end; */
+  /* align-content: center; */
+}
+
+.item{
+  width: 100px;
+  height: 100px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 100px;
+}
+
+.item1{
+  background-color: red;
+}
+
+.item2{
+  background-color: orange;
+}
+
+.item3{
+  background-color: yellow;
+}
+
+.item4{
+  background-color: green;
+}
+
+.item5{
+  background-color: blue;
+}
+
+.item6{
+  background-color: navy;
+}
+
+.item7{
+  background-color: purple;
+}

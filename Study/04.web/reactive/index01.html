@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index01</title>
+  <style>
+    body {background-color: skyblue;}
+    @media screen and (min-width: 768px) {
+      body {background-color: lightgreen;}
+      /* @media 안에는 변경될 값만 들어간다. */
+    }
+    @media screen and (min-width: 900px) {
+      body {background-color: aqua;}
+    }
+    @media screen and (min-width: 901px) and (max-width:1200px) {
+      body {background-color: pink;}
+    }
+  </style>
+</head>
+<body>
+  <h2>
+    min-width : 모바일을 기준으로
+  </h2>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti modi aliquid voluptatum optio omnis fugiat dolorum expedita. Tenetur laboriosam eos id ea autem, odit cupiditate deserunt ipsam iusto obcaecati dolorum.</p> 
+
+  <h2>무료 이미지 가져오기</h2>
+  <img src="https://placehold.co/600x400" alt="placehold">
+  <img src="https://source.unsplash.com/random/600x400/?car" alt="unsplash"> <!-- 랜덤 이미지 가져오기 -->
+</body>
+</html>

@@ -1,0 +1,31 @@
+.outer{
+  width: 300px;
+  height: 300px;
+  background-color: skyblue;
+}
+
+.inner{
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+}
+
+/* case1 : position, transform */
+.outer1{
+  position: relative;
+}
+
+.inner1{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* case2 : flex */
+
+.outer2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

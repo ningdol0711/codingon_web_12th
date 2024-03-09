@@ -1,0 +1,75 @@
+@media screen and (480px <= width <= 1024px) {
+  #container {
+    height: 100px;
+    display: flex;
+    background-color: skyblue;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .imgcontainer {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+  }
+
+  .img {
+    height: 4em;
+    width: auto;
+  }
+
+  .centerbox {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    font-weight: bold;
+  }
+
+  .rightbox {
+    width: 100px;
+    height: 100px;
+  }
+
+  .menu {
+    margin: 0px 10px 0px 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .leftbox {
+    background-color: lightblue;
+    height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .imgcontainer {
+    display: flex;
+    align-items: center;
+  }
+
+  .img {
+    height: 3em;
+    width: auto;
+  }
+
+  .centerbox {
+    display: block;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .menu {
+    background-color: azure;
+    padding: 10px;
+    border-left: 2px solid gray;
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+  }
+
+  .centerbox > div:first-child {
+    border-top: 2px solid gray;
+  }
+}

@@ -1,0 +1,78 @@
+*{
+  box-sizing: border-box;
+}
+
+.OrangeBox{
+  width: auto;
+  height: 200px;
+  background-color: orange;
+}
+
+#HTML{
+  width: 200px;
+  height: 100px;
+  border: 30px;
+  background-color: skyblue;
+  display: inline-block;
+}
+
+#CSS{
+  width: 200px;
+  height: 100px;
+  border: 30px;
+  background-color: green;
+  display: inline-block;
+}
+
+#JS{
+  width: 200px;
+  height: 100px;
+  border: 30px;
+  background-color: red;
+  display: inline-block;
+}
+
+.center{
+  background-color: magenta;
+  width: 10vw;
+  height: 10vh;
+  text-align: center;
+  line-height: 10vh;
+}
+
+.border1{
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  border-width: 5px;
+  border-style: solid;
+  border-color: blueviolet;
+  border-radius: 5px 10px 15px 20px;
+}
+.border2{
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  border-width: 5px;
+  border-top-style: dotted;
+  border-right-style: solid;
+  border-bottom-style: dashed;
+  border-left-style: double;
+  border-color: blueviolet;
+}
+
+.size1{
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  border: 15px solid red;
+  background-color: orange;
+}
+.size2{
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  border: 15px solid red;
+  background-color: orange;
+  box-sizing: content-box;
+}

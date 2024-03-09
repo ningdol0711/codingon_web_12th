@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index08</title>
+  <style>
+    .item1 {grid-area: header;}
+    .item2 {grid-area: menu;}
+    .item3 {grid-area: main;}
+    .item4 {grid-area: right;}
+    .item5 {grid-area: footer;}
+
+    .gird-container {
+      background-color: violet;
+      padding: 10px;
+
+      display: grid;
+      grid-template-areas:
+      "header header header header header header"
+      "menu main main main right right"
+      "menu footer footer footer footer footer";
+      gap: 10px;
+    }
+
+    .gird-container > div {
+      background-color: skyblue;
+      text-align: center; padding: 20px 0;
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Grid Layout</h1>
+  <div class="gird-container">
+    <div class="item1">header</div>
+    <div class="item2">menu</div>
+    <div class="item3">main</div>
+    <div class="item4">Right</div>
+    <div class="item5">footer</div>
+  </div>
+</body>
+</html>

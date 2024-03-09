@@ -1,0 +1,30 @@
+.box{
+  width: 500px;
+  height: 500px;
+  background-color: skyblue;
+}
+
+.item1{
+  position: relative;
+  top: 30px;
+  left: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: pink;
+}
+.item2{
+  position: absolute;
+  bottom: 100px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: magenta;
+}
+.item3{
+  position: fixed;
+  top: 100px;
+  right: 100px;
+  width: 50px;
+  height: 50px;
+  background-color: aquamarine;
+}

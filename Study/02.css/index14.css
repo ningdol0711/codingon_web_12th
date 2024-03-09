@@ -1,0 +1,34 @@
+.beach1{
+  background-color: blue;
+  width: 400px;
+  height: 250px;
+  position: absolute;
+
+  top: 200px;
+  left: 200px;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+img:hover{
+  /* transform : 요소 전환 */
+  /* skew : 원하는 각도만큼 기울이기 */
+  transform: skew(15deg, 15deg);
+
+  /* scale : 크기조절(0~1 : 축소, 1~ : 확대) */
+  /* transform: scale(1.5, 0.5); */
+
+  /* reotate() : 회전 */
+  /* transform: rotatex(45deg); x축 기준 회전 */
+  /* transform: rotatey(45deg); y축 기준 회전 */
+  /* transform: rotatez(45deg); z축 방향 회전 */
+
+  /* translate : 이동 */
+  /* transform: translate(100px, 100px); */
+
+  /* transition : 전환 효과 추가; */
+  transition: transform 1s;
+}
