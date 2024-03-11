@@ -11,26 +11,19 @@
   <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-  <div style="width: 50%; padding: 4rem;">
-    <div class="plan plan--popular">
-      <div class="card card--secondary">
-        <header class="card card--header">
-          <h3 class="plan--name">Entry</h3>
-          <span class="plan--rise">$14</span>
-          <span class="plan--billing-cycle">/Month</span>
-          <span class="badge badge--secondary badge--small">10% off</span>
-          <span class="plan--discription">Easy start on the cloud</span>
-        </header>
-        <div class="card--body">
-          <ul class="list list--tick">
-            <li class="list--item">item 1</li>
-            <li class="list--item">item 2</li>
-            <li class="list--item">item 3</li>
-          </ul>
-          <button class="btn btn--outline btn--block">Buy Now</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<nav class="nav collapse collapsible--expanded">
+  <a href="" class="nav__brand">
+    <img src="./images/logo.svg" alt="">
+  </a>
+    <svg class="icon icon--white nav__toggler">
+      <use xlink:href="./images/sprite.svg#menu"></use>
+    </svg>
+    <ul class="nav nav__list collapsible__content">
+      <li class="nav__item"><a href="#">Item 1</a></li>
+      <li class="nav__item"><a href="#">Item 2</a></li>
+      <li class="nav__item"><a href="#">Item 3</a></li>
+      <li class="nav__item"><a href="#">Item 4</a></li>
+    </ul>
+  </nav>
 </body>
 </html>
