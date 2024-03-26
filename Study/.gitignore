@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.cache/
+*.vscode
+*.parcel-cache
+*.log
+*.tgz
