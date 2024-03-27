@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>page <%=title %></title>
+  <%- include(./partials/head)%>
 </head>
 <body>
   <nav>
     <a href=""><h1>Blog</h1></a>
-    <% - include(./partials/nav)%>
+    <%- include(./partials/nav)%>
   </nav>
   <h1>About Page</h1>
   <div class="about content">
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia repellat dolores mollitia odio! Accusantium delectus earum soluta nulla atque amet corporis dolore! Neque fugiat nemo adipisci placeat facilis perferendis dolore!
   </div>
-  <% - include(./partials/footer)%>
+  <%- include(./partials/footer)%>
 </body>
 </html>
