@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>page <%=title %></title>
+  <%- include(./partials/head)%>
 </head>
 <body>
   <nav>
-    <ul>
-      <li><a href="/main">Main</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/create">Create</a></li>
-    </ul>
+    <% - include(./partials/nav)%>
   </nav>
   <h1>Create Page</h1>
+  <div class="create-blog content">
+    <form action="">
+      <label for="title">Blog title</label>
+      <input type="text" id="title">
+      <label for="">Blogs</label>
+      <input type="text">
+      <label for="body">Blog body</label>
+      <textarea name="" id="body" cols="30" rows="10"></textarea>
+      <button>Sumbit</button>
+    </form>
+  </div>
+  <% - include(./partials/footer)%>
 </body>
 </html>

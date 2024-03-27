@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>page <%=title %></title>
-</head>
+  <% - include(./partials/head)%>
 <body>
   <nav>
-    <ul>
-      <li><a href="/main">Main</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/create">Create</a></li>
-    </ul>
+    <% - include(./partials/nav)%>
   </nav>
   <h1>Main Page</h1>
+  <div class="blogs content">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus quam sunt veritatis. Consequatur molestiae labore voluptatem, non reiciendis obcaecati magnam quae praesentium, voluptas accusantium, laborum at est unde. Labore, enim.
+  </div>
+  <% - include(./partials/footer)%>
 </body>
-</html>
+</html> 
