@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index05</title>
+</head>
+<body>
+  <h1>Wellcome</h1>
+  <script>
+    function changeColor(newColor) {
+      return new Promise((res, rej) => {
+        setTimeout(() => {
+          document.body.style.backgroundColor = newColor;
+          res();
+        }, 1000)
+      })
+    }
+    
+    // changeColor('lightgreen').then(() => {
+    //   return changeColor('orange');
+    // }).then(() => {
+    //   return changeColor('lightblue');
+    // });
+
+    // async, await
+    async function exec() {
+      await changeColor('magenta');
+      await changeColor('violet');
+      await changeColor('pink');
+      await changeColor('purple');
+    }
+    exec();
+  </script>
+</body>
+</html>
