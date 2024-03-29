@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%=title %></title>
+</head>
+<body>
+  <h1>Wellcome to Form tag</h1>
+  <fieldset>
+    <legend><h2>Get Login</h2></legend>
+    <form action="/login_get" method="get">
+      <label for="id">ID : </label>
+      <input type="text" name="userId" id="id">
+      <br>
+      <label for="pw">PW : </label>
+      <input type="password" name="userPw" id="pw">
+      <br>
+      <label for="grade">Grade : </label>
+      <input type="number" name="userGrade" id="grade" min="1" max="3">
+      <br>
+      <input type="submit" value="Get">
+    </form>
+  </fieldset>
+  <fieldset>
+    <legend><h2>Post Login</h2></legend>
+    <form action="/login_post" method="post">
+      <label for="id">ID : </label>
+      <input type="text" name="userId" id="id">
+      <br>
+      <label for="pw">PW : </label>
+      <input type="password" name="userPw" id="pw">
+      <br>
+      <label for="grade">Grade : </label>
+      <input type="number" name="userGrade" id="grade" min="1" max="3">
+      <br>
+      <input type="submit" value="Post">
+    </form>
+  </fieldset>
+  <fieldset>
+    <legend><h2>유효성 검사</h2></legend>
+    <form action="/js-form-check" method="post" name="vailform" onsubmit="return checkform(this)">
+      <label for="id">ID : </label>
+      <input type="text" name="userId" id="id">
+      <h3>우편물 수령 장소 선택</h3>
+      <input type="radio" name="post" value="집"> 집
+      <input type="radio" name="post" value="회사"> 회사 <br>
+      <input type="submit" value="수령 장소 선택">
+    </form>
+  </fieldset>
+  <script>
+    function checkform(form) {
+      alert('form checked');
+      if(form.userId.value=="") {
+        alert('아이디를 입력하세요.');
+        form.id.focus();
+        return false;
+      }
+
+      if((form.post[0].checked == false) && (form.post[i].checked == false)) {
+        alert('우편물 수령장소를 선택해주세요.');
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,8 +1,8 @@
 {
-  "name": "15_form",
+  "name": "prt",
   "version": "1.0.0",
   "description": "",
-  "main": "index01.js",
+  "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
