@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>main</title>
+</head>
+<body>
+  <form action="/signin" method="get">
+    <label for="name">이름 : </label>
+    <input type="text" name="name" id="name">
+    <fieldset>
+      <legend><h2>성별</h2></legend>
+        <label for="male">남자</label>
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="female">여자</label>
+        <input type="radio" name="gender" id="female" value="female">
+    </fieldset>
+    <fieldset>
+      <legend><h2>생년월일</h2></legend>
+      <select name="birthYear" id="year">
+        <% for(let i = 0; i < 50; i++) { %>
+        <option value="<%= 2024 - i %>"><%= 2024 - i  %></option>
+        <% } %>
+        년
+      </select>
+      <select name="birthMonth" id="month">
+        <% for(let i = 1; i <= 12; i++) { %>
+        <option value="<%= i %>"><%= i  %></option>
+        <% } %>
+        월
+      </select>
+      <select name="birthDay" id="day">
+        <% for(let i = 1; i <= 30; i++) { %>
+        <option value="<%= i %>"><%= i  %></option>
+        <% } %>
+        일
+      </select>
+    </fieldset>
+    <fieldset>
+      <legend><h2>관심사</h2></legend>
+        <label for="travel">여행</label>
+        <input type="checkbox" name="hobby" id="travel" value="travel">
+        <label for="fashon">패션</label>
+        <input type="checkbox" name="hobby" id="fashion" value="fashion">
+        <label for="food">음식</label>
+        <input type="checkbox" name="hobby" id="food" value="food">
+    </fieldset>
+    <button type="submit">회원가입</button>
+  </form>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>main</title>
+  <title>task01</title>
 </head>
 <body>
   <form action="/signin" method="get">
@@ -12,9 +12,9 @@
     <fieldset>
       <legend><h2>성별</h2></legend>
         <label for="male">남자</label>
-        <input type="radio" name="gender" id="male">
+        <input type="radio" name="gender" id="male" value="male">
         <label for="female">여자</label>
-        <input type="radio" name="gender" id="female">
+        <input type="radio" name="gender" id="female" value="female">
     </fieldset>
     <fieldset>
       <legend><h2>생년월일</h2></legend>
@@ -40,13 +40,40 @@
     <fieldset>
       <legend><h2>관심사</h2></legend>
         <label for="travel">여행</label>
-        <input type="checkbox" name="travel" id="travel">
+        <input type="checkbox" name="hobby" id="travel" value="travel">
         <label for="fashon">패션</label>
-        <input type="checkbox" name="fashon" id="fashon">
+        <input type="checkbox" name="hobby" id="fashion" value="fashion">
         <label for="food">음식</label>
-        <input type="checkbox" name="food" id="food">
+        <input type="checkbox" name="hobby" id="food" value="food">
     </fieldset>
-    <button type="submit">회원가입</button>
+    <button type="button" onclick="clickRegister()">회원가입</button>
   </form>
+
+  <div class="reg-result" style="padding: 20px;"></div>
+
+  <script>
+    const result = document.querySelector('.reg-result');
+    const form = document.forms['register'];
+    const hobbys = Array.form(form.hobby).filter((e) => {e.checked == true}).map((e) => {e.value});
+
+    function clickRegister() {
+      const userInfo = {
+        name : form.name.value,
+        gender : form.gender.value,
+        bthYear : form.birthYear.value,
+        bthMon : form.birthMonth.value,
+        bthDay : form.birthDay.value,
+        hobbys : hobbys,
+      }
+      axios({
+        mathod : 'get',
+        url : '/register',
+        success : (userInfo) => {
+          console.log('Axios Get Register', userInfo);
+          result.textContent = userInfo;
+        }
+      })
+    }
+  </script>
 </body>
 </html>

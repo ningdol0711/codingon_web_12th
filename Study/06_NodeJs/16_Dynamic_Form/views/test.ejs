@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <style>
+    .result {
+      margin: 20px;
+      border: 3px solid violet;
+      display: inline;
+      border-radius: 3px;
+    }
+    form {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dynamic Form Test</h1>
+  <form name="register">
+    <label for="name">이름 : </label>
+    <input type="text" name="name" id="name" required>
+    <br>
+    <label for="male">남</label>
+    <input type="radio" name="gender" id="male" value="male" required>
+    <label for="female">여</label>
+    <input type="radio" name="gender" id="female" value="female">
+    <br>
+    <button type="button" onclick="ajaxGet()">Ajax Get</button>
+    <button type="button" onclick="ajaxPost()">Ajax Post</button>
+    <br>
+    <button type="button" onclick="axiosGet()">Axios Get</button>
+    <button type="button" onclick="axiosPost()">Axios Post</button>
+    <br>
+    <button type="button" onclick="fetchGet()">Fetch Get</button>
+    <button type="button" onclick="fetchPost()">Fetch Post</button>
+  </form>
+  <div class="result"></div>
+
+  <script>
+    const result = document.querySelector('.result');
+    const form = document.forms['register'];
+
+    // ajax
+    function ajaxGet() {
+      const data = {
+        name : form.name.value,
+        gender : form.gender.value,
+      }
+      $.ajax({
+        type : 'get',
+        url : '/ajax',
+        data : data,
+        success : (data) => {
+          console.log('Ajax Get : ', data);
+          result.textContent = `Ajax Get : ${data.name}\n${data.gender}`;
+        }
+      })
+    }
+    function ajaxPost() {
+      console.log("*****")
+      const data = {
+        name : form.name.value,
+        gender : form.gender.value,
+      }
+      $.ajax({
+        type : 'post',
+        url : '/ajax',
+        data : data,
+        success : (data) => {
+          console.log('Ajax Post : ', data);
+          result.textContent = `Ajax Post : ${data.name}\n${data.gender}`;
+        }
+      })
+    }
+
+    // Axios
+    function axiosGet() {
+      const data = {
+        name : form.name.value,
+        gender : form.gender.value,
+      }
+      axios({
+        method : 'get',
+        url : '/axios',
+        params : data,
+      }).then((response) => {
+        console.log('Axios Get : ', data);
+        result.textContent = `Axios Get : ${data.name}\n${data.gender}`;
+      }).catch((err) => {
+        console.log('ERROR');
+        result.textContent = `Axios rejected : ${err.response.data}`;
+      })
+    }
+    function axiosPost() {
+      const data = {
+        name : form.name.value,
+        gender : form.gender.value,
+      }
+      axios({
+        method : 'post',
+        url : '/axios',
+        params : data,
+      }).then((response) => {
+        console.log('Axios Post : ', data);
+        result.textContent = `Axios Post : ${data.name}\n${data.gender}`;
+      }).catch((err) => {
+        console.log('ERROR');
+        result.textContent = `Axios rejected : ${err.response.data}`;
+      })
+    }
+
+    // fetch
+    function fetchGet() {
+      const data = {
+        name : form.name.value,
+        gender : form.gender.value,
+      }
+      fetch(`/fetch?name=${data.name}&gender=${data.gender}`, {method : 'get'})
+      .then((response) => {
+        return response.json();
+      }).then((data) => {
+        console.log('Fetch Get : ', data);
+        result.textContent = `Fetch Get : ${data.name}\n${data.gender}`;
+      }).catch((err) => {
+        console.log('ERROR');
+        result.textContent = `Fetch rejected : ${err.response.data}`;
+      })
+    }
+    function fetchPost() {
+      const data = {
+        name : form.name.value,
+        gender : form.gender.value,
+      }
+      fetch(`/fetch?name=${data.name}&gender=${data.gender}`, {
+        method : 'post',
+        headers : {'Content-Type' : 'application/json'},
+        body : JSON.stringify(data),
+      }).then((response) => {
+        return response.json();
+      }).then((data) => {
+        console.log('Fetch Post', data);
+        result.textContent = `Fetch Post : ${data.name}\n${data.gender}`;
+      }).catch((err) => {
+        console.log('ERROR');
+        result.textContent = `Fetch rejected : ${err.response.data}`;
+      })
+    }
+  </script>
+</body>
+</html>
