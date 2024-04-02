@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>result</title>
+</head>
+<body>
+  <h1>Result</h1>
+  <p>file count : <%=filecount %></p>
+  <p>first file : <%=filenames[0].filename %></p>
+  <% for(let i=0;i<filecount;i++) { %>
+    <!-- <img src="<%=filenames[i].filename %>" alt=""> -->
+    <img src="/download/<%=filenames[i].filename %>" alt="">
+  <% } %>
+</body>
+</html>
