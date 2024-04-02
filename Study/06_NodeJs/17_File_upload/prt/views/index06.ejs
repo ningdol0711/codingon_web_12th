@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <title>index06</title>
+</head>
+<body>
+  <h1>Signin</h1>
+  <form action="/upload" method="post">
+    <input type="text" name="userId" id="userId" placeholder="id"> <br>
+    <input type="text" name="userPw" id="userPw" placeholder="pw"> <br>
+    <input type="text" name="userName" id="userName" placeholder="name"> <br>
+    <input type="text" name="userAge" id="userAge" placeholder="age"> <br>
+    <input type="file" name="userProfile" id="userProfile"> <br> <br>
+    <button type="submit" onclick="userInfo()">Upload</button>
+  </form>
+
+  <script>
+    function userInfo() {
+      const userName = document.querySelector('#userName');
+      const userId = document.querySelector('#userId');
+      const userPw = document.querySelector('#userPw');
+      const userAge = document.querySelector('#userAge');
+      const userProfile = document.querySelector('#userProfile');
+
+      const formData = new FormData();
+      formData.append('userName', userName.value);
+      formData.append('userId', userId.value);
+      formData.append('userPw', userPw.value);
+      formData.append('userAge', userAge.value);
+      formData.append('userProfile', userProfile.files[0]);
+
+      axios({
+        method: 'post',
+        URL: '/upload',
+        data: formData,
+        Headers: {'Content-Type' : 'multipart/form-data'},
+      }).then((req, res) => {
+        const {userName, userId, userPw, userAge, userProfile} = res.data;
+        
+      })
+    }
+  </script>
+</body>
+</html>
