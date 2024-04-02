@@ -39,7 +39,7 @@
         Headers: {'Content-Type' : 'multipart/form-data'},
       }).then((req, res) => {
         const {userName, userId, userPw, userAge, userProfile} = res.data;
-        
+        console.log(res.data);
       })
     }
   </script>

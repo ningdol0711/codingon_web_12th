@@ -4,17 +4,16 @@ const PORT = 8000;
 
 const multer = require('multer');
 const path = require('path');
-const upload = multer({dest: 'uploads/'});
 
 const uploadDetail = multer({
-  storage: upload.diskStorage({
+  storage: multer.diskStorage({
     destination: (req, file, cb) => {
       cb(null, 'uploads/');
     },
     filename: (req, file, cb) => {
       const ext = path.extname(file.originalname); // 확장자 추출
       path.basename(file.originalname, ext); // 파일 이름만 출력
-      cb(null, path.basename(file.originalname, ext) + Date.now() + ext);
+      cb(null, path.basename(file.originalname, ext) + ext);
     }
   }),
   limits: {
