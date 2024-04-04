@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controller/Cmain');
+const controller = require('../controller/Cuser');
 
 console.log('routes > user.js');
 

@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>comments</title>
+  <title>Comments</title>
 </head>
 <body>
   <h1>Comments list</h1>
   <a href="/">Back to home</a>
 
   <ul>
-  <% for(let i=0;i<commentInfos.length;i++) { %>
+  <% for(let i=0;i<Comments.length;i++) { %>
     <li>
-      <b><%=commentInfos[i].userId %></b>
-      <a href="/comment/<%=commentInfos[i].id %>">
-        <%=commentInfos[i].comment %>
+      <b><%=Comments[i].userId %></b>
+      <a href="/comment/<%=Comments[i].id %>">
+        <%=Comments[i].comment %>
       </a>
     </li>
   <% } %>

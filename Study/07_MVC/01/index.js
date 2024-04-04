@@ -7,13 +7,20 @@ app.set('views', './views');
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.render('index');
-})
+// app.get('/', (req, res) => {
+//   res.render('index');
+// })
 
-app.get('/user', (req, res) => {
-  res.render('user');
-})
+// app.get('/user', (req, res) => {
+//   res.render('user');
+// })
+
+// middlewere 사용
+const indexRouter = require('./routes/index');
+app.use('/', indexRouter);
+
+const userRouter = require('./routes/user');
+app.use('/user', userRouter);
 
 // 404페이지는 항상 마지막에 처리
 // app.get('*', (req, res) => {
