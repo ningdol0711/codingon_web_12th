@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main</title>
+</head>
+<body>
+  <h1>Mysql & MVC</h1>
+  <h2>Current customer count : <%= custdata.length%></h2>
+  <% for(let i=0;i<custdata.length;i++) { %>
+    <div>Customer name : <%=custdata[i].custname %></div>
+    <div>Customer id : <%=custdata[i].custid %></div>
+    <div>Customer phone : <%=custdata[i].phone %></div>
+    <div>Customer address : <%=custdata[i].addr %></div>
+    <div>Customer bitrh : <%=custdata[i].birth %></div>
+    <br>
+  <% } %>
+</body>
+</html>
