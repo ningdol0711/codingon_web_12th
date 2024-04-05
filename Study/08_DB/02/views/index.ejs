@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>customer</title>
+</head>
+<body>
+  <h1>Current customer count : <%= cust.length%></h1>
+  <% for(let i=0;i<cust.length;i++) { %>
+    <div>Customer name : <%=cust[i].custname %></div>
+    <div>Customer id : <%=cust[i].custid %></div>
+    <div>Customer phone : <%=cust[i].phone %></div>
+    <div>Customer address : <%=cust[i].addr %></div>
+    <div>Customer bitrh : <%=cust[i].birth %></div>
+    <br>
+  <% } %>
+</body>
+</html>

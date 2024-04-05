@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
       res.render('index02', {mydata: rows});
     }
   })
+  connection.end();
 })
 
 app.listen(8000, () => {
