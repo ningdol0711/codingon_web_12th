@@ -13,6 +13,10 @@ web.use('/', commentRouter);
 const userRouter = require('./routes/user');
 web.use('/user', userRouter);
 
+web.use('*', (req, res) => {
+  res.status('404').render('404');
+})
+
 web.listen(8000, () => {
   console.log('server is running at 8000');
 })

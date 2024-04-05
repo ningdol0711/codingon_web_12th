@@ -7,24 +7,7 @@
 </head>
 <body>
   <h1>result</h1>
-  <div class="result"></div>
-  <div class="userInfo"></div>
-
-  <% const result = document.querySelector('.result'); %>
-  <% const userInfo = document.querySelector('.userInfo'); %> 
-
-  <% let loginSuccess = false; %>
-  <% for(let i = 0; i < user.length; i++) { %>
-    <% if(user[i].id == id && user[i].pw == pw) { %>
-      <% result.textContent = 'Login success'; %>
-      <% userInfo.textContent = `User name : ${userName} \n User age : ${userAge}`; %>
-      <% loginSuccess = true; %>
-      <% break; %>
-    <% } %>
-  <% } %>
-
-  <% if (!loginSuccess) { %>
-    <% result.textContent = 'Login fail please try again'; %>
-  <% } %>
+  <div class="result">Login success</div>
+  <div class="userInfo">User name : <%=user.name %> <br> User age : <%=user.age %></div>
 </body>
 </html> 

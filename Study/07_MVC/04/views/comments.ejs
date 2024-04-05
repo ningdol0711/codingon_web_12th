@@ -11,7 +11,7 @@
   <ul>
     <% for(let i=0;i<comments.length;i++) { %>
       <li>
-        <p><%=comments[i].userId %></p>
+        <span><%=comments[i].userid %> : </span>
         <a href="/comment/<%=comments[i].id%>"><%=comments[i].comment%></a>
       </li>
     <% } %>
