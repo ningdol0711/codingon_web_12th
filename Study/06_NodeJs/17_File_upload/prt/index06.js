@@ -3,6 +3,8 @@ const multer = require('multer');
 const app = express();
 const path = require('path');
 
+const upload = multer({dest: 'upload/'})
+
 const uploadFile = multer({
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
@@ -11,7 +13,7 @@ const uploadFile = multer({
     filename: (req, file, cb) => {
       const ext = path.extname(file.originalname);
       file.originalname = Buffer.from(file.originalname, 'latin1').toString('utf-8');
-      cb(null, file.basename(path.basename(file.originalname, ext)) + Date.now() + ext);
+      cb(null, file.originalname);
     }
   }),
   limits: {
@@ -36,6 +38,5 @@ app.get('/', (req, res) => {
 })
 
 app.post('/upload', uploadFile.single('userProfile'),(req, res) => {
-  console.log(req.data);
   res.render('index06_result');
 })
