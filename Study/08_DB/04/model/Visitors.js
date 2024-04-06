@@ -8,8 +8,10 @@ const connect = mysql.createConnection({
 })
 
 exports.visitors = (cb) => {
-  connect.query('select * from visitor', (err, rows, fields) => {
-    if(err) throw err;
+  console.log('/model/Visitors.js.visitors');
+  const sql = 'select * from visitor';
+  connect.query(sql, (err, rows) => {
+    console.log('visitors success');
     cb(rows);
   })
 }

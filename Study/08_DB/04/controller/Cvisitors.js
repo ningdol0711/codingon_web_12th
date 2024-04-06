@@ -6,9 +6,9 @@ exports.main = (req, res) => {
 
 exports.visitor = (req, res) => {
   console.log('/controller/Cvisitor.visitor');
-  const {name, comment} = req.query;
-  res.render('visitor');
-  visitors.visitors(req.query, (result) => {
+  console.log(req.query);
+  res.render('visitor', {data: req.query});
+  visitors.visitors(result => {
     res.send(result);  
   })
 }
