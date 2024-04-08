@@ -4,8 +4,18 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
-app.get('/', (req, res) => {
-  res.render('index');
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+
+app.use('/static', express.static(__dirname + '/static'));
+
+const mainRouter = require('./routes/index');
+app.use('/', mainRouter);
+
+app.use('/visitor', mainRouter);
+
+app.get('*', (req, res) => {
+  res.render('404');
 })
 
 app.listen(8000, () => {
