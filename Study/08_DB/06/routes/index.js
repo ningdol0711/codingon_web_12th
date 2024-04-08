@@ -13,4 +13,6 @@ router.post('/addVisitor', controller.addVisitor);
 
 router.delete('/deleteVisitor', controller.deleteVisitor);
 
+router.get('/selectVisitor', controller.selectVisitor);
+
 module.exports = router;

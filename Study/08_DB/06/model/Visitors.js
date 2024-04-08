@@ -2,7 +2,7 @@ const mysql = require('mysql2');
 
 const connect = mysql.createConnection({
   host: 'localhost',
-  user: 'user',
+  user: 'root',
   database: 'kdt',
   password: '1234',
 })
@@ -26,9 +26,16 @@ exports.add = (data, cb) => {
 
 exports.del = (id, cb) => {
   const sql = 'delete from visitor where id = (?)';
-  console.log(id);
   connect.query(sql, id, (err, rows) => {
     console.log('/model/Visitor.del');
+    cb(rows);
+  })
+}
+
+exports.select = (data, cb) => {
+  const sql = 'select name, comment from visitor where id = ?';
+  connect.query(sql, data.id, (err, rows) => {
+    console.log('/model/Visitor.select');
     cb(rows);
   })
 }

@@ -31,6 +31,19 @@ function addVisitor() {
   })
 }
 
+function editVisitor(id) {
+  axios({
+    method: 'get',
+    url: '/selectVisitor',
+    data: {
+      name : data.name.value,
+      comment : data.comment.value,
+    },
+  }).then((req, res) => {
+    console.log(res.data);
+  })
+}
+
 function delVisitor(obj, id) {
   if(!confirm('Are you sure??')) return;
   axios({

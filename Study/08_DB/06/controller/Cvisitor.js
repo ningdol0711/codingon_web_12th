@@ -16,10 +16,16 @@ exports.addVisitor = (req, res) => {
 }
 
 exports.deleteVisitor = (req, res) => {
-  console.log(req.body.id);
   console.log('/controller/Cvisitor.deleteVisitor');
   visitors.del((req.body.id), (result) => {
     console.log('Delete success');
     res.send('Delete success');
   })
+}
+
+exports.selectVisitor = (req, res) => {
+  console.log('/controller/Cvisitor.editVisitor');
+  visitors.select(req.body, (result) => {
+    console.log(result);
+  });
 }
