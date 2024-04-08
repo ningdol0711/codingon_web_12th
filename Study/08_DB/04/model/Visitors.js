@@ -11,6 +11,7 @@ exports.visitors = (cb) => {
   console.log('/model/Visitors.js.visitors');
   const sql = 'select * from visitor';
   connect.query(sql, (err, rows) => {
+    if(err) throw err;
     console.log('visitors success');
     cb(rows);
   })
