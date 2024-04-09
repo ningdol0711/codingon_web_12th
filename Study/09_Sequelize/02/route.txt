@@ -1,0 +1,12 @@
+페이지 요청
+get /user
+get /user/sigin
+get /user/signup
+
+DB 요청
+post /user/profile
+post /user/profile/edit
+post /user/profile/delete
+
+post /user/signup
+post /user/signin
