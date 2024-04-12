@@ -5,3 +5,4 @@ dist/
 *.parcel-cache
 *.log
 *.tgz
+*.env
