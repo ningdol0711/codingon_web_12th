@@ -1,0 +1,37 @@
+## references
+@server = http://localhost:8000
+@playerId = 2
+@teamId = 3
+
+## get all players
+GET {{server}}/players
+
+## get all teams
+GET {{server}}/teams
+
+## get all games
+GET {{server}}/teamgames
+
+## select player
+GET {{server}}/players/{{playerId}}
+
+## get all team sort by name
+GET {{server}}/teams?sort=name_asc
+
+GET {{server}}/teams/{{teamId}}
+
+GET {{server}}/teams/{{teamId}}/players
+
+POST {{server}}/players
+
+Content-Type: application/json; charset=utf-8
+
+{
+  "name": "손흥민",
+  "age": "31",
+  "teamId": 2,
+}
+
+GET {{server}}/teams?search=KT
+
+DELETE {{server}}/players/{{playerId}}
