@@ -1,12 +1,16 @@
 const teamGameModel = (sequelize, DataTypes) => {
   const teamGame = sequelize.define(
-    'TeamGame', {
-      id: {
+    'teamgame', {
+      team_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
       },
+      game_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      }
     },
     {
       freezeTableName: true,
@@ -14,5 +18,4 @@ const teamGameModel = (sequelize, DataTypes) => {
   )
   return teamGame;
 }
-
 module.exports = teamGameModel;

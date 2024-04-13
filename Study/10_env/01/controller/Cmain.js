@@ -1,10 +1,11 @@
 const {Op} = require('sequelize');
-const {Player, Profile, Team, TeamGame, Game, profile} = require('../models');
+const {Player, Profile, Team, TeamGame, Game} = require('../models');
 
 exports.main = (req, res) => {
   res.render('index');
 }
 
+// all players
 exports.getAllPlayers = async (req, res) => {
   try{
     const players = await Player.findAll();
@@ -23,7 +24,7 @@ exports.getPlayer = async (req, res) => {
     const {player_id} = req.params;
     const player = await Player.findOne({
       where: {player_id: player_id},
-      include: [{model: profile, attributes: ['position', 'salary']}],
+      include: [{model: Profile, attributes: ['position', 'salary']}],
     })
   }
   catch{(err) => {
