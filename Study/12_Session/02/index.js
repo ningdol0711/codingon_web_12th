@@ -30,7 +30,7 @@ web.get('/login', (req, res) => {
   res.render('login');
 })
 
-web.post('/', (req, res) => {
+web.post('/login', (req, res) => {
   req.session.name = req.body.id;
   if(JSON.stringify(req.body) == JSON.stringify(user)) {
     req.session.user = 'logout';
