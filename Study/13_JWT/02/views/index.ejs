@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>JWT 실습</h1>    
+    <div id="info"></div>
+
+    <script>
+        //자동실행 함수
+
+        // (function(){
+        //     alert('불렀나요?')
+        // })();
+
+        // 1.로그인 했는지 안 했는지 판단? 만약 토큰이 있다면, 로그인 한 것이다
+        // 토큰이 없다면 로그인x
+        // 토큰이 있으면 axios에서 유저정보를 받아서 띄워주고
+        // 토큰이 없으면 login 페이지의 링크를 보여줌
+
+            ( async function(){
+                const token = localStorage.getItem('login');
+                const infoBox = document.getElementById('info');
+                let data=''
+
+                try{
+                    if(token) {
+                        data = '<a href="/login">로그인</a>';
+                    } else {
+                        const res = await axios({
+                            method:'POST',
+                            url: "/token",
+                            Headers : {
+                                Authorization: `Bearer ${token}`,
+                            }
+                        })//axios end
+                        console.log('res.data->', res.data)
+                        if(res.data.isVerify){
+                            data = ` <p>${res.data.name}님 환영합니다</p>
+                            <button type="button" onclick="logout()">로그아웃</button>`
+                        } else{
+                            alert(res.data.msg)
+                        }
+
+                    } //else end
+                    infoBox.innerHTML=data;
+
+                } catch (err){
+                    console.log('err발생',err)
+                }
+            })();
+
+            function logout(){
+                localStorage.clear();
+                document.location.reload()
+            }
+
+    </script>
+</body>
+</html>
