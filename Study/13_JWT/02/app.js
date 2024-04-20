@@ -26,7 +26,7 @@ app.post('/login',(req,res)=>{
         const { id, pw} = req.body;
         const { id: realId, pw:realPw} = userInfo;
     
-        if ( id=== realId && pw=== realPw){
+        if ( id === realId && pw === realPw){
             const token = jwt.sign({id:id}, SECRET);
             res.send({isLogin: true, token });
         } else{
