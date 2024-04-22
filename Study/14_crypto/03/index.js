@@ -23,9 +23,19 @@ app.use(session({
   }
 }))
 
-const userRouter = require('./routes/user');
-
+const userRouter = require('./routes/index');
 app.get('/', userRouter);
+app.get('/register', userRouter);
+app.get('/login', userRouter);
+app.get('/users', userRouter);
+app.get('profile', userRouter);
+
+app.post('/login', userRouter);
+app.post('/register', userRouter);
+
+app.patch('/profile/edit', userRouter);
+
+app.delete('/destroy', userRouter);
 
 app.get('*', (req, res) => {
   res.render('404');

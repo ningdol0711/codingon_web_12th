@@ -1,0 +1,27 @@
+@server = http://localhost:8000
+###
+GET {{server}}
+
+GET {{server}}/register
+
+GET {{server}}/login
+
+GET {{server}}/users
+
+POST {{server}}/register
+Content-Type: application/json; charset=utf-8
+
+{
+  "userid": "Lee",
+  "pw": "1234",
+  "name": "YHS",
+}
+
+POST {{server}}/login
+Content-Type: application/json; charset=utf-8
+
+{
+  "userid": "Lee",
+  "pw": "1234",
+  "name": "YHS",
+}

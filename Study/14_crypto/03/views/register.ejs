@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<%-include (head.ejs) %>
+<%-include ('head.ejs') %>
 <body>
-  <form name="register">
+  <form name="register-form">
     <input type="text" name="userId" placeholder="ID"> <br>
     <input type="text" name="pw" placeholder="PW"> <br>
     <input type="text" name="name" placeholder="Name"> <br>
@@ -13,25 +13,21 @@
   <a href="/login">Login</a>
 
   <script>
-    const form = document.forms['register'];
-    async function register() {
+    const form = document.forms['register-form'];
+    function register() {
       try {
         const res = axios({
           method: 'POST',
           url: '/register',
           data: {
+            name: form.name.value,
             userId: form.userId.value,
             pw: form.pw.value,
-            name: form.name.value,
           }
         })
-        if(res.data.result) {
-          alert('Wellcome');
-          document.location.href = '/';
-        }
-      }
-      catch(err) {
-        console.log(err);
+      } 
+      catch (error) {
+        console.log(error);
       }
     }
   </script>
