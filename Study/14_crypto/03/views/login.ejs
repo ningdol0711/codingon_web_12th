@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<-include (head.ejs) >
+<body>
+  <h1>Login</h1>
+  <form onsubmit="login(event)">
+    <input type="text" id="userId" placeholder="Id">
+    <input type="password" id="pw" placeholder="password">
+    <button type="submit">Login</button>
+  </form>
+  <br>
+  <a href="/">Home</a>
+  <a href="/register">register</a>
+
+  <script>
+    async function login(event) {
+      event.preventDefault() // 원본 기능 해제
+      try {
+        const res = await axios({
+          method: 'POST',
+          url: '/login',
+          data: {
+            userId: document.querySelector('#userId').value,
+            pw: document.querySelector('#pw').value,
+          }
+        })
+        if(res.data.result) {
+          alert(`${res.data.data.name} Login success`);
+          document.cookie = `testCookie=signup; path=/`;
+          document.location.href = '/';
+        }
+        else {
+          alert(`${res.data.message}`);
+          document.location.reload();
+        }
+      }
+      catch(err) {
+        console.log(err);
+      }
+    }
+  </script>
+</body>
+</html>

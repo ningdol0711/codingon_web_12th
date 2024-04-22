@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<-include('head.ejs') >
+<body>
+  <h1>register, login, profile</h1>
+  <%if(data) { %>
+    <p>Wellcome <%=data.name %></p>
+  <%} else { %>
+    <p>your not currently loged in</p>
+  <%} %>
+  <br>
+  
+  <a href="/register">Register</a> <br>
+  <a href="/login">Login</a> <br>
+  <a href="/users">Users</a> <br>
+  <%if(data) { %>
+    <a href="/profile">My profile</a> <br>
+  <%} %>
+</body>
+</html>
