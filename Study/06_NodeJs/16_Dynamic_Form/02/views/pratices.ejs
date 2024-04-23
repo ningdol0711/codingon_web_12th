@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <title>Pratices</title>
+</head>
+<body>
+  <form action="" name="register">
+    <label for="username">NAME</label>
+    <input type="text" name="username" id="username" required> <br>
+    <fieldset>
+      <legend>Gender</legend>
+      <input type="radio" name="gender" id="male" value="male" checked>
+      <label for="male">Male</label> <br>
+      <input type="radio" name="gender" id="female" value="female">
+      <label for="female">Female</label> <br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Birthday</legend>
+      <label for="year">Year</label>
+      <select name="birthyear" id="year">
+        <% for(let i = 0; i < 25; i++) { %>
+        <option value="<%= 2024 - i %>"><%= 2024 - i  %></option>
+        <% } %>
+      </select>
+      <label for="birthmonth">Month</label>
+      <select name="birthmonth" id="month">
+        <% for(let i = 1; i <= 12; i++) { %>
+        <option value="<%= i %>"><%= i  %></option>
+        <% } %>
+      </select>
+      <label for="birthday">Day</label>
+      <select name="birthday" id="day">
+        <% for(let i = 1; i <= 30; i++) { %>
+        <option value="<%= i %>"><%= i  %></option>
+        <% } %>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>Hobby</legend>
+      <label for="travel">Travel</label>
+      <input type="checkbox" name="hobby" id="travel" value="travel">
+      <label for="game">Game</label>
+      <input type="checkbox" name="hobby" id="game" value="game">
+      <label for="fashon">Fashon</label>
+      <input type="checkbox" name="hobby" id="fashon" value="fashon">
+    </fieldset>
+    <button type="button" onclick="clickRegister()">Register</button>
+  </form>
+  <hr>
+  <div class="registerResult"></div>
+
+  <script>
+    const result = document.querySelector('.registerResult');
+    const form = document.forms['register'];
+
+    function clickRegister() {
+      const hobbies = Array.from(form.hobby).filter(e => {e.checked === true}).map(e => {e.value});
+      console.log(hobbies);
+
+      const data = {
+        username: form.username.value,
+        gender: form.gender.value,
+        birthyear: form.birthyear.value,
+        birthmonth: form.birthmonth.value,
+        birthday: form.birthday.value,
+        hobby: hobbies,
+      }
+
+      axios({
+        method: 'get',
+        url: '/register', 
+        params: data,
+      }).then((req, res) => {
+        const {username, gender, birthyear, birthmonth, birthday, hobby} = data;
+        result.textContent = `${username}, ${gender}, ${birthyear}, ${birthmonth}, ${birthday}, ${hobby}`;
+      })
+    }
+  </script>
+</body>
+</html>

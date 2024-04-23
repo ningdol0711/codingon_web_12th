@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <title>Main</title>
+</head>
+<body>
+  <h1>Axios post</h1>
+  <form action="" name="loginForm">
+    <label for="id">ID : </label>
+    <input type="text" name="id" id="id" required>
+    <label for="pw">PW : </label>
+    <input type="text" name="pw" id="pw" required>
+    <br>
+    <button type="button" onclick="login()">Login</button>
+  </form>
+  <br>
+  <hr>
+  <div class="result"></div>
+  
+  <script>
+    const result = document.querySelector('.result');
+    const form = document.forms['loginForm'];
+
+    const user = {
+      id: 'ningdol',
+      pw: '1234',
+    }
+
+    function login() {
+      const loginuser = {
+        id: form.id.value,
+        pw: form.pw.value,
+      }
+
+      axios({
+        method: 'post',
+        url: '/postlogin',
+        data: loginuser,
+      }).then((req, res) => {
+        console.log(res.data);
+        if(JSON.stringify(user) === JSON.stringify(res.body)) {
+          result.textContent = "Wellcome";
+        }
+        else {
+          result.textContent = "Login failed";
+        }
+      })
+    }
+  </script>
+</body>
+</html>
