@@ -28,7 +28,7 @@ app.get('/', userRouter);
 app.get('/register', userRouter);
 app.get('/login', userRouter);
 app.get('/users', userRouter);
-app.get('profile', userRouter);
+app.get('/profile', userRouter);
 
 app.post('/login', userRouter);
 app.post('/register', userRouter);
