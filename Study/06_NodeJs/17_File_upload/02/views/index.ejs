@@ -3,13 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <style>
+    .profile { 
+      width: 200px; 
+      height: 200px; 
+      border-radius:50%;
+      box-shadow: 0 0 20px rgba(0,0,0,.5);
+    }
+  </style>
   <title>Main</title>
 </head>
 <body>
-  <h1>Add user</h1>
-  <form action="/upload" method="post" enctype="multipart/form-data">
-    <input type="file" name="userFile" id="userFile"> <br> <br> 
-    <input type="submit" name="" id="" value="파일 업로드">
-  </form>
+  <h1>User info</h1>
+  <input type="text" name="title" id="title" placeholder="Title">
+  <label for="">User profile</label>
+  <input type="file" name="dynamicFile" id="dynamicFile">
+  <button type="button" onclick="fileUpload()">Upload</button>
+  <br>
+  <!-- 업로드 이미지 보여줄 img태그 -->
+  <img src="" alt="">
+
+  <script>
+    const title = document.querySelector('#title');
+    const file = document.querySelector('#dynamicFile');
+    const img = document.querySelector('img');
+
+    function fileUpload() {
+      const formData = new FormData();
+
+      formData.append('title' , title.value);
+      formData.append('dynamicFile' , file.files[0]);
+
+      axios({
+        method: 'POST',
+        url: '/dynamic',
+        data: formData,
+        headers:{ 'content-Type' : 'multipart/form-data'}
+      }).then((req, res) => {
+        const {file, title} = req.data;
+
+        img.src = '/' + file.path;
+        img.alt = title;
+        img.classList.add('profile');
+      })
+    }
+  </script>
 </body>
 </html>
