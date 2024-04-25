@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitor</title>
+</head>
+<body>
+  <h1>Visitor</h1>
+  <a href="/">Home</a>
+  <br> <br>
+  <form action=""> 
+    <legend>Comment Add or Edit</legend>
+    <input type="text" name="name" id="name" placeholder="name"> <br>
+    <input type="text" name="comment" id="comment" placeholder="comment"> <br>
+    <div id="gtn-group">
+      <button type="button" onclick="addUser()">Add</button>
+    </div>
+  </form>
+  <hr>
+  <table border="1px" cellspaceing>
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>User</td>
+        <td>Comment</td>
+        <td>Edit</td>
+        <td>Del</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <%for(let i=0;i<data.length;i++) { %>
+          <tr id = 'tr_<%=data[i].id %>'></tr>
+          <td><%=data[i].id%></td>
+          <td><%=data[i].name%></td>
+          <td><%=data[i].comment%></td>
+          <td><button type="button" onclick="editVisitor('<%=data[i].id %>')">Edit</button></td>
+          <td><button type="button" onclick="delVisitor(this, '<%=data[i].id %>')">Del</button></td>
+        <%} %>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
