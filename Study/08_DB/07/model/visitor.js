@@ -31,7 +31,7 @@ exports.getVisitor = (id, cb) => {
   })
 }
 
-exports.postContent = (data, cd) => {
+exports.postContent = (data, cb) => {
   const sql = 'update visitor set name = ? comment = ?';
   const vals = [data.name, data.comment];
 
