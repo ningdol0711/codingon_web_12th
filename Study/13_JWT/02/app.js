@@ -10,7 +10,7 @@ app.set('views','./views');
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
-const userInfo = { id: '1234', pw: '1234', name:'이준규', age:21};
+const userInfo = { id: '1234', pw: '1234', name:'양희서', age:21};
 
 app.get('/',(req,res)=>{
     res.render('index')
@@ -36,7 +36,6 @@ app.post('/login',(req,res)=>{
         console.error(err)
     }
 })
-
 
 // 토큰검증
 app.post('/token',(req,res)=>{

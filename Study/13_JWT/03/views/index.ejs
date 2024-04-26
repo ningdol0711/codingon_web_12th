@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <title>Main</title>
+</head>
+<body>
+  <h1>JWT(Json Web Token)</h1>
+  <div id="userInfo"></div>
+
+  <script>
+    (async function () {
+      const token = localStorage.getItem('login');
+      const infobox = document.querySelector('#userInfo');
+      let data = ``;
+      try {
+        if(!token) {
+          data = `<a href="/login">Login</a>`;
+        }
+        else {
+          data = 'token';
+          const res = await axios({
+            method: 'post',
+            url: '/token',
+            headers: {
+              Authorization: `Bearer ${token}`,
+            }
+          })
+        }
+        infobox.innerHTML = data;
+      }
+      catch {
+        console.loge(err);
+      }
+    })
+  </script>
+</body>
+</html>

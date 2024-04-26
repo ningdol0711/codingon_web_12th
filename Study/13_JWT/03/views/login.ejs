@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <title>Login</title>
+</head>
+<body>
+  <h1>Login</h1>
+  <form action="" name="Login-form">
+    <input type="text" name="id" id="id">
+    <input type="password" name="pw" id="pw">
+    <button type="button" onclick="Login()">Login</button>
+  </form>
+
+  <script>
+    const form = document.forms['Login-form'];
+    async function Login() {
+      try {
+        const res = await axios({
+          method: 'post',
+          utl: '/login',
+          data: {
+            id: form.id.value,
+            pw: form.pw.value,
+          }
+        })
+        if(res.data.isLogin) {
+          localStorage.setItem('login', res.data.token);
+          document.location.href = '/';
+        }
+        else {
+          alert(res.data.msg);
+          form.reset();
+        }
+      }
+      catch(err) {
+        console.log(err);
+      }
+    }
+  </script>
+</body>
+</html>
