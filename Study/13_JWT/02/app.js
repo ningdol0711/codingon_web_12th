@@ -44,7 +44,6 @@ app.post('/token',(req,res)=>{
         const authorization = req.headers.authorization.split(' ');
         console.log('authorization -->', authorization) // ['Bearer','토큰스트링']
         const token = authorization[1];
-
         try{
            let result = jwt.verify(token,SECRET);
             console.log('verify result >', result);

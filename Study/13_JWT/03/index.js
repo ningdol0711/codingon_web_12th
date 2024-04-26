@@ -23,28 +23,38 @@ app.post('/token', (req, res) => {
   if(req.headers.authorization) {
     const authorization = req.headers.authorization.split(' ');
     const token = authorization[1];
-
     try {
       const result = jwt.verify(token, SECRET);
       if(result.id === userInfo.id) {
-        res.send({isVerify: true})
+        res.send({isVerify: true, name: userInfo.name});
+      }
+      else {
+        res.send({isVerify: false, msg: 'Wrong access'});
       }
     }
-    catch {
-      console.log(err);
+    catch(err) {
+      res.send({isLogin: false, msg: 'You cant access page'});
     }
+  }
+  else {
+    res.redirect('/login');
   }
 })
 
 app.post('/login', (req, res) => {
-  const {id, pw} = req.body;
-  const {id: realID, pw: realPW} = userInfo;
-  if(id == realID && pw == realPW) {
-    const token = jwt.sign({id: id}, SECRET);
-    res.send({isLogin: true, token});
+  try{
+    const {id, pw} = req.body;
+    const {id: realID, pw: realPW} = userInfo;
+    if(id == realID && pw == realPW) {
+      const token = jwt.sign({id: id}, SECRET);
+      res.send({isLogin: true, token});
+    }
+    else {
+      res.send({isLogin: false, msg: 'Please check your ID, PW'});
+    }
   }
-  else {
-    console.log('check it');
+  catch(err) {
+    console.log(err);
   }
 })
 

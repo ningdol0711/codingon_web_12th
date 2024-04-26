@@ -20,7 +20,7 @@
       try {
         const res = await axios({
           method: 'post',
-          utl: '/login',
+          url: '/login',
           data: {
             id: form.id.value,
             pw: form.pw.value,
@@ -36,7 +36,7 @@
         }
       }
       catch(err) {
-        console.log(err);
+        console.log(err)
       }
     }
   </script>

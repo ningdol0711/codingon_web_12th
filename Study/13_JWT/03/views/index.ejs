@@ -28,13 +28,26 @@
               Authorization: `Bearer ${token}`,
             }
           })
+          if (res.data.isVerify) {
+            data = `
+              <p>Wellcome ${res.data.name}!</p>
+              <button type='button' onclick='logout()'>Logout</button>
+            `;
+          } 
+          else {
+            alert(res.data.msg);
+          }
         }
         infobox.innerHTML = data;
       }
-      catch {
-        console.loge(err);
+      catch(err) {
+        console.log(err);
       }
-    })
+    })()
+    function logout() {
+      localStorage.clear();
+      document.location.reload();
+    }
   </script>
 </body>
 </html>
