@@ -65,4 +65,10 @@ let update = (id) => {
   document.querySelector('#id').innerHTML = search.item;
 }
 
+function calc() {
+  let cartcnt = document.querySelector('#cartAmount');
+  cartcnt.innerHTML = cart.map(x => x.item).reduce((x, y) => {x+y, 0})
+}
+
 genshop();
+calc();
