@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main</title>
+</head>
+<body>
+  
+  <ul id="myList">
+    <li>Coffee</li>
+    <li>milk</li>
+  </ul>
+
+  <button onclick="myF()">Add</button>
+  <script>
+    function myF() {
+      const li = document.createElement('li');
+      const textNode = document.createTextNode('Tea');
+
+      li.appendChild(textNode);
+      document.querySelector('#myList').appendChild(li);
+    }
+  </script>
+</body>
+</html>

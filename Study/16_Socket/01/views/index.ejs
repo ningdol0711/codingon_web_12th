@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main</title>
+</head>
+<body>
+  <h1>Chat</h1>
+
+  <ul></ul>
+
+  <form action="" id="chat">
+    Name: <input type="text" name="name" id="name">
+    Comment: <input type="text" name="message" id="message">
+  </form>
+
+  <script>
+    const socket = new WebSocket('ws://localhost:8000');
+    const chatForm = document.querySelector('#chat');
+    const ul = document.querySelector('ul');
+
+    socket.onopen((ev) => {
+      console.log(ev);
+    })
+
+    socket.onclose((ev) => {
+      console.log(ev);
+    })
+
+    socket.onerror((err) => {
+      console.log(err);
+    })
+
+    socket.onmessage((mes) => {
+      console.log(mes);
+    })
+
+    chatForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+    })
+  </script>
+</body>
+</html>
