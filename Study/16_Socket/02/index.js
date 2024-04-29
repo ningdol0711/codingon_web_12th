@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 io.sockets.on('connection', (socket) => {
   socket.on('newUser', (name) => {
     socket.name = name;
-    io.sockets.emit('update', {type: 'connect', name: 'server', message: name + 'has been connected'});
+    io.sockets.emit('update', {type: 'connect', name: 'server', message: name + ' has been connected'});
   })
 
   socket.on('message', (data) => {
@@ -40,7 +40,7 @@ io.sockets.on('connection', (socket) => {
   })
 
   socket.on('disconnect', () => {
-    socket.broadcast.emit('update', {type: 'disconnect', name: 'SERVER', message: socket.name + 'has been disconnected'});
+    socket.broadcast.emit('update', {type: 'disconnect', name: 'SERVER', message: socket.name + ' has been disconnected'});
   })
 })
 

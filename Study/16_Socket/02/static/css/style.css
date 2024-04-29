@@ -1,24 +1,51 @@
 #main {
-
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 20px;
+  background-color: lightblue;
+  text-align: center;
+  width: 500px;
+  height: 800px;
 }
 
 #chat {
-
+  height: 90%;
+  width: 100%;
+  overflow-y: auto;
 }
 
 .connect {
-
+  width: 90%;
+  margin: auto;
+  border-radius: 5px;
+  background-color: lightgreen;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .disconnect {
-
+  width: 90%;
+  margin: auto;
+  border-radius: 5px;
+  background-color: skyblue;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .me {
-
+  width: 90%;
+  margin: auto;
+  background-color: lemonchiffon;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .other {
-
+  width: 90px;
+  margin: auto;
+  background-color: violet;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 10px;
 }
-

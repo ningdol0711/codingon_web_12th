@@ -35,12 +35,12 @@ function send() {
   document.querySelector('#test').value = '';
 
   let chat = document.querySelector('#chat');
-  let msg = document.querySelector('#div');
-  document.createTextNode(message);
+  let msg = document.createElement('div');
+  let node = document.createTextNode(message);
 
   msg.classList.add('me');
   msg.appendChild(node);
   chat.appendChild(msg);
 
-  socket.emit('message', {type: 'message', })
+  socket.emit('message', {type: 'message', message: message});
 }
