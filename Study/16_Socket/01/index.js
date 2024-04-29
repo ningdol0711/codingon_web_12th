@@ -36,4 +36,3 @@ wsServer.on('connection', (socket) => {
     console.log('close connection');
   })
 })
-
