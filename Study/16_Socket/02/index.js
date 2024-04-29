@@ -9,8 +9,8 @@ app.set('views', 'views');
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use('/css', express.static(__dirname + '/static/css'));
-app.use('/js', express.static(__dirname + '/static/js'));
+app.use('/css', express.static('./static/css'));
+app.use('/js', express.static('./static/js'));
 
 const server = http.createServer(app);
 const io = socket(server);
@@ -29,8 +29,21 @@ app.get('/', (req, res) => {
 })
 
 io.sockets.on('connection', (socket) => {
+  socket.on('newUser', (name) => {
+    socket.name = name;
+    io.sockets.emit('update', {type: 'connect', name: 'server', message: name + 'has been connected'});
+  })
 
+  socket.on('message', (data) => {
+    data.name = socket.name;
+    socket.broadcast.emit('update', data);
+  })
+
+  socket.on('disconnect', () => {
+    socket.broadcast.emit('update', {type: 'disconnect', name: 'SERVER', message: socket.name + 'has been disconnected'});
+  })
 })
+
 
 server.listen(8000, () => {
   console.log('Server is running at 8000....');
