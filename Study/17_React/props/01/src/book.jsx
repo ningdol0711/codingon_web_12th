@@ -4,7 +4,9 @@ function BookComp(props) {
   return ( 
     <div className="App book">
       <h2 className='best'>Best Seller</h2>
-      <div className="img"></div>
+      <div className="img">
+        <img src="/logo192.png" alt="img" />
+      </div>
       <h2 className="title">{props.title}</h2>
       <div className="info">
         <p className="author">저자 : {props.author}</p>

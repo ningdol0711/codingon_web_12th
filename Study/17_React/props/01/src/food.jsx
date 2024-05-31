@@ -4,8 +4,8 @@ function FoodProps(props) {
    );
 }
 
-FoodProps.defaultProps = {
-  food: "burger",
-}
+// FoodProps.defaultProps = {
+//   food: "burger",
+// }
 
 export default FoodProps;

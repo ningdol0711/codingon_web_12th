@@ -14,8 +14,8 @@ class ClassComp extends Component {
   }
 }
 
-ClassComp.defaultProps = {
-  name: "default",
-}
+// ClassComp.defaultProps = {
+//   name: "default",
+// }
 
 export default ClassComp;
