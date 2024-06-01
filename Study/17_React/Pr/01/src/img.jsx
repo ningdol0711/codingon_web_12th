@@ -3,7 +3,7 @@ function SelectImg(props = "peach") {
 
   return (  
     <div>
-      <img src={text} alt="" />
+      <img src={text} alt={props.selectedValue} width={100} height={100}/>
     </div>
    );
 }
