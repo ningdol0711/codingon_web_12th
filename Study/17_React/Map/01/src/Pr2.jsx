@@ -4,10 +4,12 @@ import './App.css'
 function Pr2() {
   const [user, setUser] = useState([
     {
+      id: 1,
       name: "코디",
       email: "codi@gmail.com",
     },
     {
+      id: 2,
       name: "윤소희",
       email: "yoonsohee@gmail.com",
     },
@@ -17,9 +19,11 @@ function Pr2() {
   const [inputEmail, setInputEmail] = useState("");
   const [selectOption, getOption] = useState("");
   const [searchValue, getValue] = useState("");
+  const [editUserValue, editSelectUser] = useState("");
 
   const addUser = () => {
     const newUser = user.concat({
+      id: user.length + 1,
       name: inputName,
       email: inputEmail,
     });
@@ -59,6 +63,20 @@ function Pr2() {
     }
   }
 
+  const editUser = (targetId) => {
+    const nameInput = document.querySelector("#nameInput");
+    const emailInput = document.querySelector("#emailInput");
+
+    const eddittingUser = user.filter((e) => {
+      return (e.id === targetId)
+    })
+
+    console.log(eddittingUser)
+
+    nameInput.value = eddittingUser[0].name;
+    emailInput.value = eddittingUser[0].email;
+  }
+
   return (
     <div>
       <input
@@ -67,6 +85,7 @@ function Pr2() {
         onChange={(e) => {
           setInputName(e.target.value);
         }}
+        id="nameInput"
       />
       <input
         type="text"
@@ -77,6 +96,7 @@ function Pr2() {
         onKeyDown={(e) => {
           eventListener(e);
         }}
+        id="emailInput"
       />
 
       <button onClick={addUser}>Add</button>
@@ -103,17 +123,18 @@ function Pr2() {
           </tr>
         </thead>
         <tbody>
-          {user.map((e, index) => {
+          {user.map((e) => {
             return (
               <tr
-                key={index}
+                key={e.id}
                 onDoubleClick={() => {
                   deleteUser(e.name);
                 }}
               >
-                <td>{index + 1}</td>
+                <td>{e.id}</td>
                 <td>{e.name}</td>
                 <td>{e.email}</td>
+                <td><button onClick={() => {editUser(e.id)}}>Edit</button></td>
               </tr>
             );
           })}
@@ -129,15 +150,15 @@ function Pr2() {
           </tr>
         </thead>
         <tbody>
-          {searchedUser.map((e, index) => {
+          {searchedUser.map((e) => {
             return (
               <tr
-                key={index}
+                key={e.id}
                 onDoubleClick={() => {
                   deleteUser(e.name);
                 }}
               >
-                <td>{index + 1}</td>
+                <td>{e.id}</td>
                 <td>{e.name}</td>
                 <td>{e.email}</td>
               </tr>
