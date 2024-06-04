@@ -75,6 +75,7 @@ function Pr2() {
 
     nameInput.value = eddittingUser[0].name;
     emailInput.value = eddittingUser[0].email;
+    
   }
 
   return (
