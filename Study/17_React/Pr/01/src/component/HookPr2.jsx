@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import { useState } from "react";
+import '../App.css'
 
 function HookPr2() {
   const [item1, setItem1] = useState("item1");
@@ -22,7 +23,7 @@ function HookPr2() {
   });
 
   return (
-    <div>
+    <div className="App">
       <ul>
         <li>
           {editing ? (

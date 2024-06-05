@@ -6,7 +6,7 @@ function HookPr1() {
   const [searchText, setSearchText] = useState("");
 
   const matchText = useMemo(() => {
-    const count = inputText.split(' ').includes(searchText);
+    const count = inputText.split(searchText).length - 1;
     return count;
   }, [inputText, searchText]);
 
@@ -14,9 +14,9 @@ function HookPr1() {
     <div>
       <input type="text" onChange={(e) => {setInputText(e.target.value)}}/>
       <input type="text" onChange={(e) => {setSearchText(e.target.value)}}/>
-      <div>{searchText} 단어의 빈도수 : {matchText || "없음"}</div>
+      <div>{searchText} 단어의 빈도수 : {matchText >= 1 ? matchText : "없음"}</div>
     </div>
-  );
+   );
 }
 
 export default HookPr1;
