@@ -1,23 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import UseCallBack from './components/useCallBack';
+import UseCallBack2 from './components/useCallBack2';
+import UseMenoFunc from './components/useMemo';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UseMenoFunc />
+      <UseCallBack />
+      <UseCallBack2 />
     </div>
   );
 }
