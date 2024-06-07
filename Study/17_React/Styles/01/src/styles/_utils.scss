@@ -3,3 +3,29 @@
   width: $size;
   height: $size;
 }
+
+@mixin circle($px, $name) {
+  @keyframes #{$name}-circleing {
+    0% {
+      top: 0;
+      left: 0;
+    }
+    25% {
+      top: 0;
+      left: $px;
+    }
+    50% {
+      top: $px;
+      left: $px;
+    }
+    75% {
+      top: $px;
+      left: 0;
+    }
+    100% {
+      top: 0;
+      left: 0;
+    }
+  }
+  animation: #{$name}-circleing 3s infinite;
+}

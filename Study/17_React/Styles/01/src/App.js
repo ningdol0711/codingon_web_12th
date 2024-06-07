@@ -1,12 +1,18 @@
 import './App.css';
-import CssModuleComp from './CssModuleComp';
-import SassComp from './SassComp';
+import Pr3 from './Pr3';
+// import Pr1 from './Pr1';
+// import Pr2 from './Pr2';
+// import CssModuleComp from './CssModuleComp';
+// import SassComp from './SassComp';
 
 function App() {
   return (
     <div className="App">
-      <CssModuleComp />
-      <SassComp />
+      {/* <CssModuleComp />
+      <SassComp /> */}
+      {/* <Pr1 /> */}
+      {/* <Pr2 /> */}
+      <Pr3 />
     </div>
   );
 }
