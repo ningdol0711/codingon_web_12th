@@ -1,7 +1,9 @@
 // import { useState } from 'react';
 import './App.css';
-import HookPr1 from './component/HookPr1';
-import HookPr2 from './component/HookPr2';
+import Faq from './component/components/faq';
+import UseReducer from './component/useReducerEx';
+// import HookPr1 from './component/HookPr1';
+// import HookPr2 from './component/HookPr2';
 // import SelectorComp from './Selector';
 // import TextInput from './TextInput';
 // import SelectImg from './img';
@@ -37,9 +39,11 @@ function App() {
       <TextInput textChange={textChange}/>
       <SelectImg selectedValue = {selectedImg}/>
       <TextBox selectedText={selectedText} selectedTextBack={selectedTextBack} selectedTextColor={selectedTextColor}/> */}
-      <HookPr1 />
+      {/* <HookPr1 />
       <hr />
-      <HookPr2 />
+      <HookPr2 /> */}
+      <UseReducer />
+      <Faq />
     </div>
   );
 }
