@@ -12,7 +12,7 @@ function App() {
       <SassComp /> */}
       {/* <Pr1 /> */}
       {/* <Pr2 /> */}
-      <Pr3 />
+      {/* <Pr3 /> */}
     </div>
   );
 }
