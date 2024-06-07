@@ -1,0 +1,5 @@
+// 변수 선언 mixin 선언
+@mixin box($size) {
+  width: $size;
+  height: $size;
+}

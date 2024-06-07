@@ -4,7 +4,10 @@ function CssModuleComp() {
   console.log(styles)
   return ( 
     <div>
-      <h1>CssModuleComp</h1>
+      <h1 className={styles.container}>CssModuleComp</h1>
+      <div className={[styles.red, styles.box].join(' ')}></div>
+      <div className={[styles.orange, styles.box].join(' ')}></div>
+      <div className={[styles.green, styles.box].join(' ')}></div>
     </div>
    );
 }

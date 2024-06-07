@@ -1,0 +1,20 @@
+// 중첩 : 부모 자식 관계 표현 가능
+.container {
+  .box {
+    // mixin 호출
+    @include box(150px);
+    
+    // .box.red -> box red
+    // &: 부모 선택자 참조해서 치환
+
+    &.red {
+      background-color: $red-color;
+    }
+    &.orange {
+      background-color: $orange-color;
+    }
+    &.green {
+      background-color: $green-color;
+    }
+  }
+}
