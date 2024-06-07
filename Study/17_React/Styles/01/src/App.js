@@ -1,5 +1,6 @@
 import './App.css';
-import Pr3 from './Pr3';
+// import Pr3 from './Pr3';
+import StyledComponent from './styledComponent';
 // import Pr1 from './Pr1';
 // import Pr2 from './Pr2';
 // import CssModuleComp from './CssModuleComp';
@@ -13,6 +14,7 @@ function App() {
       {/* <Pr1 /> */}
       {/* <Pr2 /> */}
       {/* <Pr3 /> */}
+      <StyledComponent />
     </div>
   );
 }
