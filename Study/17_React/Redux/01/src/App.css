@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.book {
+  width: 40%;
+  height: 50%;
+  border: 1px solid black;
+  background-color: bisque;
+}
+
+.best {
+  color: orange;
+}
+
+.img {
+  display: inline-block;
+  width: 80%;
+  height: 300px;
+  background-color: violet;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
